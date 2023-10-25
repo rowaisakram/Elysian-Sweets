@@ -1978,6 +1978,7 @@ footer {
   }
   .social-icons-contact div {
     width: 80%;
+    gap: 30%;
   }
 }
 @media (max-width: 479px) {

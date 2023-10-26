@@ -390,28 +390,78 @@
   });
 })(jQuery);
 
-// Get the modal
-var modal = document.getElementById("myModal");
+$(document).ready(function () {
+  // Select the time slot select element
+  var $timeSlotSelect = $("#timeSlotSelect");
+  var $seatsInput = $("#input_number");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+  // Add an event handler for the onchange event on the time slot select
+  $timeSlotSelect.on("change", function () {
+    // Get the selected text (label) associated with the selected option
+    var selectedText = $timeSlotSelect.find("option:selected").text();
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+    // Display the selected text in the second form
+    $("#selectedTimeSlot").text(selectedText);
+  });
 
-// When the user clicks the button, open the modal
-btn.onclick = function () {
-  modal.style.display = "flex";
-};
+  // Add an event handler for the onchange event on the seats input
+  $seatsInput.on("change", function () {
+    // Get the selected seats value
+    var selectedSeatsValue = $seatsInput.val();
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-  modal.style.display = "none";
-};
+    // Display the selected seats value in the second form
+    $("#selectedSeats").text(selectedSeatsValue);
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+    // You can perform additional actions based on the selected seats value if needed
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".new-form");
+
+  // Get the first modal and its button and span
+  const modal1 = document.getElementById("myModal");
+  const btn1 = document.getElementById("myBtn1");
+  const span1 = document.getElementsByClassName("close")[0];
+
+  // Get the second modal and its button and span
+  const modal2 = document.getElementById("Availability_modal");
+  const btn2 = document.getElementById("btn_availability");
+  const span2 = document.getElementsByClassName("close")[1];
+
+  form.addEventListener("submit", function (event) {
+    const name = document.getElementById("input_name").value;
+    const phone = document.getElementById("input_phone").value;
+    const email = document.getElementById("input_email").value;
+    const date = document.getElementById("input_date").value;
+    const timeSlot = document.getElementById("timeSlotSelect").value;
+    const seats = document.getElementById("input_number").value;
+
+    if (!date || !timeSlot || !seats) {
+      event.preventDefault();
+      alert("Please fill in all required fields.");
+    } else if (!date || timeSlot === "0" || !seats) {
+      event.preventDefault();
+      alert("Please fill in all required fields.");
+    } else {
+      // Open the second modal
+      modal2.style.display = "flex";
+      event.preventDefault(); // Prevent form submission
+    }
+  });
+
+  // When the user clicks the first button, open the first modal
+  btn1.onclick = function () {
+    modal1.style.display = "flex";
+  };
+
+  // When the user clicks on the first <span> (x), close the first modal
+  span1.onclick = function () {
+    modal1.style.display = "none";
+  };
+
+  // When the user clicks on the second <span> (x), close the second modal
+  span2.onclick = function () {
+    modal2.style.display = "none";
+  };
+});

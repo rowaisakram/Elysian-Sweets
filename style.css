@@ -1686,6 +1686,19 @@ footer {
   font-size: 24px;
   font-weight: 600;
 }
+.time-value {
+  width: 100%;
+  border: 1px solid #ccc;
+  height: 35px;
+  border-radius: 5px;
+  outline: none;
+}
+.selected-time-slot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+}
 /*cart-2*/
 
 /* .btn-2 {

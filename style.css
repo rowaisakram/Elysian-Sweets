@@ -1582,6 +1582,9 @@ footer {
   overflow-x: hidden;
   text-align: center;
 }
+.modal-content-2 {
+  width: 50%;
+}
 .new-form {
   display: flex;
   flex-direction: column;
@@ -1609,12 +1612,12 @@ footer {
   display: inline-block;
   font-weight: 600;
   background-color: #f88c91;
-  padding: 10px 50px;
+  padding: 10px 26px;
   text-transform: uppercase;
   border: none;
   border-radius: 0;
   text-decoration: none;
-  margin: 10px 15px 0;
+
   letter-spacing: 2px;
   font-family: "Poppins", sans-serif;
   letter-spacing: 1.12px;

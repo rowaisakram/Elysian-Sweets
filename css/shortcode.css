@@ -142,6 +142,7 @@
 .photo-slider .carousel-caption a:hover {
   color: #f88c91;
   background-color: #fff;
+  cursor: pointer;
 }
 .photo-slider .carousel-control i {
   display: inline-block;
@@ -2548,7 +2549,7 @@
 @media (max-width: 1200px) {
   /* - Photo Slider */
   .photo-slider .carousel-caption {
-    top: 55%;
+    top: 89%;
   }
   .photo-slider .carousel-caption p {
     font-size: 30px;
@@ -2805,9 +2806,7 @@
 /* - max-width: 767 */
 @media (max-width: 767px) {
   /* - Photo Slider */
-  .photo-slider .carousel-caption {
-    top: 50%;
-  }
+
   .photo-slider .carousel-caption p {
     font-size: 24px;
   }
@@ -3142,6 +3141,9 @@
   .contact-us-1 .col-xs-6.contact-content {
     width: 100%;
   }
+  .selected-time-slot {
+    padding: 10px !important;
+  }
 }
 
 /* - max-width: 360 */
@@ -3152,7 +3154,8 @@
   }
   /* - Photo Slider */
   .photo-slider .carousel-caption {
-    top: 48%;
+    top: 90%;
+    gap: 22%;
   }
   /* - Festival Section */
   .festival-section .festival-content h5 {
@@ -3193,5 +3196,17 @@
   /* - Video Section */
   .video-link-list .col-xs-6.video-links {
     width: 100%;
+  }
+  .modal-content input[type="submit"] {
+    padding: 9px 28px !important;
+  }
+}
+@media (max-width: 321px) {
+  .modal-content input[type="submit"] {
+    padding: 9px 11px !important;
+  }
+  .selected-time-slot {
+    padding: 0 !important;
+    gap: 2px !important;
   }
 }

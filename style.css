@@ -1584,6 +1584,8 @@ footer {
 }
 .modal-content-2 {
   width: 50%;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 .new-form {
   display: flex;

@@ -395,73 +395,71 @@ $(document).ready(function () {
   var $timeSlotSelect = $("#timeSlotSelect");
   var $seatsInput = $("#input_number");
 
-  // Add an event handler for the onchange event on the time slot select
   $timeSlotSelect.on("change", function () {
-    // Get the selected text (label) associated with the selected option
     var selectedText = $timeSlotSelect.find("option:selected").text();
 
-    // Display the selected text in the second form
     $("#selectedTimeSlot").text(selectedText);
   });
 
-  // Add an event handler for the onchange event on the seats input
   $seatsInput.on("change", function () {
-    // Get the selected seats value
     var selectedSeatsValue = $seatsInput.val();
 
-    // Display the selected seats value in the second form
     $("#selectedSeats").text(selectedSeatsValue);
-
-    // You can perform additional actions based on the selected seats value if needed
   });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  // first modal
   const form = document.querySelector(".new-form");
-
-  // Get the first modal and its button and span
   const modal1 = document.getElementById("myModal");
   const btn1 = document.getElementById("myBtn1");
   const span1 = document.getElementsByClassName("close")[0];
 
-  // Get the second modal and its button and span
+  //second modal
   const modal2 = document.getElementById("Availability_modal");
   const btn2 = document.getElementById("btn_availability");
   const span2 = document.getElementsByClassName("close")[1];
+  const alertMsg = document.getElementById("alert-msg-1");
 
   form.addEventListener("submit", function (event) {
-    const name = document.getElementById("input_name").value;
-    const phone = document.getElementById("input_phone").value;
-    const email = document.getElementById("input_email").value;
     const date = document.getElementById("input_date").value;
     const timeSlot = document.getElementById("timeSlotSelect").value;
     const seats = document.getElementById("input_number").value;
 
-    if (!date || !timeSlot || !seats) {
-      event.preventDefault();
-      alert("Please fill in all required fields.");
-    } else if (!date || timeSlot === "0" || !seats) {
+    if (!date || timeSlot === "0" || !seats) {
       event.preventDefault();
       alert("Please fill in all required fields.");
     } else {
-      // Open the second modal
-      modal2.style.display = "flex";
-      event.preventDefault(); // Prevent form submission
+      event.preventDefault();
+
+      var allSeatsReserved = false;
+
+      if (allSeatsReserved) {
+        alertMsg.innerText = "Sorry, all seats reserved at this Time Slot";
+        alertMsg.style.display = "block";
+      } else {
+        modal2.style.display = "flex";
+      }
     }
   });
 
-  // When the user clicks the first button, open the first modal
   btn1.onclick = function () {
     modal1.style.display = "flex";
   };
 
-  // When the user clicks on the first <span> (x), close the first modal
   span1.onclick = function () {
     modal1.style.display = "none";
   };
 
-  // When the user clicks on the second <span> (x), close the second modal
   span2.onclick = function () {
     modal2.style.display = "none";
   };
+
+  window.addEventListener("click", function (event) {
+    if (event.target == modal1) {
+      modal1.style.display = "none";
+    } else if (event.target == modal2) {
+      modal2.style.display = "none";
+    }
+  });
 });

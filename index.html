@@ -6,14 +6,21 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html class=""><!--<![endif]-->
   <head>
     <meta charset="utf-8" />
+    <meta
+      name="google-site-verification"
+      content="UXtyotqZaHMNL3Qj84GwSWSUNVgg7IxK_bkYfnUVoCM"
+    />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <meta name="description" content="" />
+    <meta name="title" content="Sweet Luxury & Desserts | Elysian Sweets" />
+    <meta
+      name="description"
+      content="Explore a world of delectable desserts at Elysian Sweets. From sinfully rich chocolate creations to light and refreshing delicious cakes, discover a diverse array of desserts to satisfy every palate."
+    />
     <meta name="author" content="" />
 
-    <title>Home - Bakery</title>
+    <title>Home</title>
 
     <!-- Standard Favicon -->
     <link rel="icon" type="image/x-icon" href="images//16x16.jpg" />
@@ -38,8 +45,26 @@
       href="images//apple-touch-icon-57x57-precomposed.png"
     />
 
-    <!-- Custom - Theme CSS -->
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css"
+    />
+    <!-- Custom - CSS -->
+    <link rel="stylesheet" href="./css/styles.css?v=1.6" />
 
     <!--[if lt IE 9]>
       <script src="js/html5/respond.min.js"></script>
@@ -67,10 +92,15 @@
             <div
               class="navbar-header d-flex align-items-center justify-content-between"
             >
-              <a class="navbar-brand" href="index.html" title="Logo">
+              <a
+                class="navbar-brand"
+                href="index.html"
+                title="Logo"
+                style="max-width: 35%"
+              >
                 <figure>
                   <img
-                    src="images/Elysian-Sweets-LOGO-Full (Custom).png"
+                    src="images/Elysian-Sweets-LOGO-Full.png"
                     alt="logo"
                     style="filter: invert(1)"
                   />
@@ -107,16 +137,19 @@
                 </li>
               </ul>
             </div> -->
-            <!-- <div id="navbar" class="navbar-collapse collapse navbar-right">
-              <ul class="nav navbar-nav">
+            <div id="navbar" class="navbar-collapse collapse navbar-right">
+              <ul class="nav navbar-nav custom-navbar">
                 <li>
-                  <a href="contact-1.html" title="Contact us">Contact Us</a>
-                </li>
-                <li>
-                  <a title="Subscribe Now" href="#">Subscribe Now</a>
+                  <a
+                    title="Subscribe Us"
+                    style="text-align: center"
+                    class="btn-nav nav-hover"
+                    href="https://elysiansweets.pk/Menu/ES-Menu.pdf"
+                    >MENU</a
+                  >
                 </li>
               </ul>
-            </div> -->
+            </div>
           </nav>
           <!-- Navigation -->
         </div>
@@ -136,12 +169,19 @@
         >
           <div role="listbox" class="carousel-inner">
             <div class="item active">
-              <img
-                width="1920"
-                height="1030"
-                alt="slider"
-                src="images/1920x1030.jpg"
-              />
+              <picture>
+                <source
+                  media="(max-width: 600px)"
+                  srcset="images/475x550_Mobile_Banner.jpg"
+                />
+                <img
+                  width="1920"
+                  height="1030"
+                  alt="slider"
+                  src="images/1920x1030_Web_Banner.jpg"
+                />
+              </picture>
+
               <div class="carousel-caption">
                 <a
                   title="Reservation"
@@ -149,12 +189,13 @@
                   data-animation="animated bounceInUp"
                   >Reservation</a
                 >
-                <a
+                <!-- <a
                   title="Subscribe"
                   id="myBtn"
                   data-animation="animated bounceInUp"
+                  href="join-us.html"
                   >Subscribe</a
-                >
+                > -->
               </div>
             </div>
 
@@ -234,89 +275,86 @@
         <!-- Main Carousel /-  -->
       </div>
       <!-- Photo Slider /- -->
-      <!--Contact Us Modal-->
-      <!-- The Modal -->
-      <div id="myModal" class="modal">
+      <!--Check Reservation Modal-->
+      <div id="checkReserve_modal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
 
-          <div class="col-xs-12">
-            <h3>Reservation</h3>
-            <form class="row new-form">
-              <div class="form-group col-xs-12">
-               
-              <div class="form-group col-xs-12">
-                <input
-                  type="date"
-                  id="input_date"
-                  name="contact-date"
-                  required
-                  placeholder="Date"
-                  class="form-control"
-                />
-              </div>
-              <div class="form-group col-xs-12">
-                <select class="form-select time-value" aria-label="Default select example" id="timeSlotSelect" required>
-                 <option value="" selected disabled>Select Time Slot</option>
-                  <option value="1">10:30-11:30</option>
-                  <option value="2">11:30-12:30</option>
-                  <option value="3">12:30-01:30</option>
-                  <option value="4">01:30-02:30</option>
-                  <option value="5">02:30-03:30</option>
-                  <option value="6">03:30-04:30</option>
-                </select>
-              </div>
-              <div class="form-group col-xs-12" id="seatsSelects">
-                <input
-                  type="number"
-                  id="input_number"
-                  required
-                  name="contact-phone"
-                  placeholder="Seats"
-                  min="1"
-                  max="20"
-                  class="form-control"
-                />
-              </div>
-              <div class="form-group col-xs-12">
-                <input
+          <h3>Reservation</h3>
+          <span class="msg-alert"></span>
+          <form class="row new-form">
+            <div class="form-group col text-left">
+              <label for="contact-date">Select Date:</label>
+              <input
+                id="input_date"
+                name="contact-date"
+                placeholder="Date"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group col text-left">
+              <label for="contact-date">Select Time:</label>
+              <select
+                class="form-select time-value"
+                aria-label="Default select example"
+                id="timeSlotSelect"
+                required
+              >
+                <option value="" disabled selected>First Select Date</option>
+              </select>
+            </div>
+            <div class="form-group col" id="seatsSelects">
+              <input
+                type="number"
+                id="input_seat"
+                required
+                name="input-seats"
+                placeholder="Seats"
+                min="1"
+                max="100"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group col">
+              <input
                 type="submit"
                 title="Check Availability"
                 value="Check Availability"
                 id="btn_availability"
                 name="Check Availability"
               />
-              </div>
-              <div id="alert-msg-1" class="alert-msg"></div>
-            </form>
-          </div>
+            </div>
+            <div id="alert-msg" class="alert-msg"></div>
+          </form>
         </div>
       </div>
-       <div id="Availability_modal" class="modal">
+      <!-- Check Reservation Modal-->
+      <!--Reservation Modal-->
+      <div id="reservation_modal" class="modal">
         <!-- Modal content -->
         <div class="modal-content modal-content-2">
           <span class="close">&times;</span>
 
           <div class="col-xs-12">
             <h3>Reservation</h3>
+            <span class="msg-alert"></span>
             <form class="row new-form">
-               <div class="form-group col-xs-12">
-                <input
-                  type="date"
-                  id="input_date"
-                  name="contact-date"
-                  required=""
-                  placeholder="Date"
-                  class="form-control"
-                />
+              <div class="form-group col-xs-12">
+                <p class="time-value selected-time-slot">
+                  Selected Date: <span id="selectedDate"></span>
+                </p>
               </div>
               <div class="form-group col-xs-12">
-             <p class="time-value selected-time-slot">Selected Time Slot: <span id="selectedTimeSlot"></span></p>
-                 
+                <p class="time-value selected-time-slot">
+                  Selected Time-slot: <span id="selectedTimeSlot"></span>
+                </p>
               </div>
               <div class="form-group col-xs-12">
-               <p class="time-value selected-time-slot">Selected Seats: <span id="selectedSeats"></span></p>
+                <p class="time-value selected-time-slot">
+                  Selected Seats: <span id="selectedSeats"></span>
+                </p>
               </div>
               <div class="form-group col-xs-12">
                 <input
@@ -333,10 +371,12 @@
                 <input
                   type="text"
                   id="input_phone"
-                  required=""
+                  required
                   name="contact-phone"
                   placeholder="Phone Number"
                   class="form-control"
+                  minlength="11"
+                  maxlength="11"
                 />
               </div>
               <div class="form-group col-xs-12">
@@ -349,7 +389,7 @@
                   class="form-control"
                 />
               </div>
-              <div class="form-group col-xs-12">
+              <!-- <div class="form-group col-xs-12">
                 <input
                   type="text"
                   id="input_address"
@@ -358,13 +398,13 @@
                   placeholder="Address"
                   class="form-control"
                 />
-              </div>
-           
+              </div> -->
+
               <input
                 type="submit"
                 title="Make Reservation"
                 value="Make Reservation"
-                id="btn_submit"
+                id="btn_makeReserve"
                 name="Make Reservation"
               />
               <div id="alert-msg" class="alert-msg"></div>
@@ -372,71 +412,101 @@
           </div>
         </div>
       </div>
-    </main>
+      <!--Reservation Modal-->
+      <!--OTP Modal-->
+      <div id="otp-form_modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content modal-content-3">
+          <span class="close">&times;</span>
 
+          <div class="col-xs-12">
+            <h3>Reservation</h3>
+            <span class="msg-alert"></span>
+            <form action="javascript: void(0)" class="otp-form" name="otp-form">
+              <div class="title">
+                <h3>OTP VERIFICATION</h3>
+                <p class="msg">Please enter OTP to verify</p>
+              </div>
+              <div class="otp-input-fields">
+                <input type="number" class="otp__digit otp__field__1" />
+                <input type="number" class="otp__digit otp__field__2" />
+                <input type="number" class="otp__digit otp__field__3" />
+                <input type="number" class="otp__digit otp__field__4" />
+              </div>
+              <a
+                title="Confirm"
+                id="otp_cnf"
+                data-animation="animated bounceInUp"
+                >Confirm</a
+              >
+              <div id="alert-msg" class="alert-msg"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--OTP Modal-->
+    </main>
+    <!-- 
+    <section id="otp-form">
+      <div class="container">
+        <form action="javascript: void(0)" class="otp-form" name="otp-form">
+          <div class="title">
+            <h3>OTP VERIFICATION</h3>
+
+            <p class="msg">Please enter OTP to verify</p>
+          </div>
+          <div class="otp-input-fields">
+            <input type="number" class="otp__digit otp__field__1" />
+            <input type="number" class="otp__digit otp__field__2" />
+            <input type="number" class="otp__digit otp__field__3" />
+            <input type="number" class="otp__digit otp__field__4" />
+            <input type="number" class="otp__digit otp__field__5" />
+            <input type="number" class="otp__digit otp__field__6" />
+          </div>
+        </form>
+      </div>
+    </section> -->
     <footer class="footer-main container-fluid no-padding">
       <div class="footer-content container">
-        <div class="col-md-4 col-sm-6 col-xs-6">
+        <div class="col-12">
           <div class="about-footer">
             <figure>
-              <img
-                src="images/Elysian-Sweets-LOGO-Full.png"
-                alt="logo"
-                style="filter: invert(1); max-width: 60%"
-              />
+              <a href="index.html">
+                <img
+                  src="images/Elysian-Sweets-LOGO-Full.png"
+                  alt="logo"
+                  style="filter: invert(1); max-width: 25%"
+              /></a>
             </figure>
-            <p>
-              The day for a three hour tour a three hour tour then one day he
-              was shooting at some food and up through the ground oil.
-            </p>
-            <a href="contact-1.html" title="Contact" class="about-links"
+
+            <a href="subscribe-us.html" title="Contact" class="about-links"
               >Contact</a
             >
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-xs-6">
-          <div class="about-footer">
-            <h5>Order online</h5>
-            <p>
-              The day for a three hour tour a three hour tour then one day he
-              was shooting at some food and up through the ground oil.
-            </p>
-            <a href="#" title="Order Now" class="about-links order"
-              >Order Now</a
-            >
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-xs-6">
-          <div class="about-footer">
-            <h5>Contact Us Today</h5>
-            <p>
-              Call Us 0346 8697 097 Send an Email on contact@cakeshop.com Visit
-              Us LDS Mall, Session Chowk, Amir Colony Jhang Sadar, Jhang, Punjab
-              35200
-            </p>
             <ul>
               <li>
-                <a href="#" title="Facebook"
-                  ><i class="fa fa-facebook" aria-hidden="true"></i
+                <a
+                  href="https://www.facebook.com/elysiansweetspk/"
+                  title="Facebook"
+                  ><i class="fab fa-facebook" aria-hidden="true"></i
                 ></a>
               </li>
               <li>
-                <a href="#" title="Twitter"
-                  ><i class="fa fa-twitter" aria-hidden="true"></i
+                <a
+                  href="https://www.instagram.com/elysiansweets_pk/"
+                  title="Instagram"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <!-- <li>
+                <a href="#" title="Tiktiok"
+                  ><i class="fa-brands fa-tiktok"></i
                 ></a>
               </li>
               <li>
-                <a href="#" title="Google-plus"
-                  ><i class="fa fa-google-plus" aria-hidden="true"></i
+                <a href="#" title="Youtube"
+                  ><i class="fa-brands fa-youtube"></i
                 ></a>
-              </li>
-              <li>
-                <a href="#" title="Dribbble"
-                  ><i class="fa fa-dribbble" aria-hidden="true"></i
-                ></a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -445,14 +515,9 @@
 
     <!-- Bottom Footer -->
     <div class="bottom-footer container-fluid no-padding">
-      <div class="container">
+      <div class="container" style="text-align: center">
         <div class="footer-copyright">
-          <p>&copy; Copyrights 2016 Royal Bakers. All Rights Reserved</p>
-        </div>
-        <div class="footer-breadcrumb pull-right">
-          <ol class="breadcrumb">
-            <li><a title="Contact" href="contact-1.html">Contact</a></li>
-          </ol>
+          <p>&copy; Copyrights 2023 Elysian Sweets. All Rights Reserved</p>
         </div>
       </div>
     </div>
@@ -467,8 +532,13 @@
 
     <!-- Library - Google Map API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW40y4kdsjsz714OVTvrw7woVCpD8EbLE"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.alphanum/1.0.24/jquery.alphanum.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
     <!-- Library - Theme JS -->
+
     <script src="js/functions.js"></script>
+    <script src="js/custom.js?v=1.7"></script>
   </body>
 </html>
